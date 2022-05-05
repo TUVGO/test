@@ -1,0 +1,1633 @@
+{
+	"info": {
+		"_postman_id": "6d433081-524d-45a4-b0ce-363b5ab8a2a4",
+		"name": "CMS后台",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "员工管理",
+			"item": [
+				{
+					"name": "员工管理列表",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{admin-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "emplName",
+									"value": "赵",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "emplTel",
+									"value": "3173",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "corpName",
+									"value": "企业",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "startTime",
+									"value": "2021-12-20",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "endTime",
+									"value": "2021-12-20",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "memberId",
+									"value": "1+",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "corpId",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/system/canteenEmployee/list",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"system",
+								"canteenEmployee",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "员工列表查询参数获取",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{admin-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/system/canteenEmployee/fetchSearchParams",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"system",
+								"canteenEmployee",
+								"fetchSearchParams"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "新增员工",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{admin-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/system/canteenEmployee/add",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"system",
+								"canteenEmployee",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "编辑员工",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{admin-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n            \"createTime\": \"2021-12-20 12:12:59\",\r\n            \"id\": 1,\r\n            \"memberId\": 215,\r\n            \"corpId\": 2,\r\n            \"corpName\": \"测试企业\",\r\n            \"worker\": 0,\r\n            \"grantStatus\": 0,\r\n            \"emplSn\": null,\r\n            \"emplName\": \"赵19\",\r\n            \"emplTel\": \"165****1111\",\r\n            \"emplBalance\": 50.0,\r\n            \"emplFreezeBalance\": 0.0,\r\n            \"emplJoinTime\": null,\r\n            \"emplLeaveTime\": \"2021-05-10\"\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/system/canteenEmployee/edit",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"system",
+								"canteenEmployee",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "查询员工",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{admin-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\":1472052535735296001,\"corpId\":2,\"emplName\":\"钱10\",\"emplTel\":\"16888888888\",\"worker\":0,\"emplJoinTime\":\"2021-06-10\",\"emplLeaveTime\":\"2020-05-10\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/system/canteenEmployee/1472052535735296001",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"system",
+								"canteenEmployee",
+								"1472052535735296001"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "充值",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{admin-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\":7,\"amount\":50}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/system/canteenEmployee/recharge",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"system",
+								"canteenEmployee",
+								"recharge"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "回收",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{admin-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\":21,\"amount\":50000}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/system/canteenEmployee/recycle",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"system",
+								"canteenEmployee",
+								"recycle"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "冻结",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{admin-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\":1,\"amount\":2}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/system/canteenEmployee/freeze",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"system",
+								"canteenEmployee",
+								"freeze"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "解冻",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{admin-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\":1,\"amount\":2}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/system/canteenEmployee/unfreeze",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"system",
+								"canteenEmployee",
+								"unfreeze"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "员工导出",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{admin-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "emplName",
+									"value": "赵",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "emplTel",
+									"value": "3173",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "corpName",
+									"value": "企业",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "corpId",
+									"value": "1",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "memberId",
+									"value": "203",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "ctimeStart",
+									"value": "2021-12-18 22:00:00",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "ctimeEnd",
+									"value": "2021-12-30 23:00:00",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "worker",
+									"value": "0",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/system/canteenEmployee/export",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"system",
+								"canteenEmployee",
+								"export"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "员工导入",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{admin-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/Administrator/Desktop/员工导入模板 (1).xls"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/system/canteenEmployee/import",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"system",
+								"canteenEmployee",
+								"import"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "交易日志",
+			"item": [
+				{
+					"name": "交易日志列表",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{admin-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "emplName",
+									"value": "钱",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "emplTel",
+									"value": "8888",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "corpName",
+									"value": "企业11",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "corpId",
+									"value": "2",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "pageNum",
+									"value": "2",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "pageSize",
+									"value": "10",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/system/canteenTradeLog/list?pageNum=1&pageSize=10&tradeType=0&tradeSubject=0&settlementStatus=0",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"system",
+								"canteenTradeLog",
+								"list"
+							],
+							"query": [
+								{
+									"key": "pageNum",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "10"
+								},
+								{
+									"key": "emplName",
+									"value": "李导入",
+									"disabled": true
+								},
+								{
+									"key": "tradeType",
+									"value": "0"
+								},
+								{
+									"key": "tradeSubject",
+									"value": "0"
+								},
+								{
+									"key": "settlementStatus",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "日志查询参数",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{admin-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/system/canteenTradeLog/fetchSearchParams",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"system",
+								"canteenTradeLog",
+								"fetchSearchParams"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "日志导出",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{admin-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/system/canteenTradeLog/export",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"system",
+								"canteenTradeLog",
+								"export"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "日志详情",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{admin-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/system/canteenTradeLog/1472840835739852802",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"system",
+								"canteenTradeLog",
+								"1472840835739852802"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "签到",
+			"item": [
+				{
+					"name": "签到列表",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{admin-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "emplName",
+									"value": "钱",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "emplTel",
+									"value": "8888",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "corpName",
+									"value": "企业11",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "corpId",
+									"value": "2",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "pageNum",
+									"value": "2",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "pageSize",
+									"value": "10",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/system/sign-record/list?pageNum=100000&pageSize=20",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"system",
+								"sign-record",
+								"list"
+							],
+							"query": [
+								{
+									"key": "pageNum",
+									"value": "100000"
+								},
+								{
+									"key": "pageSize",
+									"value": "20"
+								},
+								{
+									"key": "signDate",
+									"value": "2022-11-26",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "分账",
+			"item": [
+				{
+					"name": "分账检查",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{admin-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "ids",
+									"value": "66,67",
+									"description": "结算申请列表中数据ID 使用 逗号拼接",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/system/apply/merchantSplitCheck",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"system",
+								"apply",
+								"merchantSplitCheck"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "申请结算列表",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{admin-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "autoPay",
+									"value": "normal",
+									"description": "是否自动付款，选项值 通过 结算列表查询参数获取 使用key 作为 参数值传递",
+									"type": "default"
+								},
+								{
+									"key": "huifuId",
+									"value": "汇付ID ",
+									"type": "default",
+									"disabled": true
+								},
+								{
+									"key": "huifuAcct",
+									"value": "汇付账户",
+									"type": "default",
+									"disabled": true
+								},
+								{
+									"key": "是否启动分账",
+									"value": "checkStatus == 1 && huifuId !=null",
+									"type": "default",
+									"disabled": true
+								},
+								{
+									"key": "发起分账按钮",
+									"value": "checkStatus==1",
+									"type": "default",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/system/apply/list",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"system",
+								"apply",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "订单列表",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{admin-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "autoPay",
+									"value": "normal",
+									"type": "default"
+								},
+								{
+									"key": "autoPay",
+									"value": "autoPay",
+									"type": "default",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/system/payOrder/list?huifuBpStatus=P&commercialUserName&hfSplitSn&huifuBpSn",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"system",
+								"payOrder",
+								"list"
+							],
+							"query": [
+								{
+									"key": "huifuBpStatus",
+									"value": "P",
+									"description": "汇付余额支付状态 P:处理中；S：成功；F：失败，参数通过 列表查询参数获取"
+								},
+								{
+									"key": "commercialUserName",
+									"value": null,
+									"description": "所属商务 "
+								},
+								{
+									"key": "hfSplitSn",
+									"value": null,
+									"description": "分账编号"
+								},
+								{
+									"key": "huifuBpSn",
+									"value": null,
+									"description": "余额支付编号"
+								},
+								{
+									"key": "commercialUserName",
+									"value": null,
+									"description": "所属商务",
+									"disabled": true
+								},
+								{
+									"key": "totalMoney",
+									"value": null,
+									"description": "订单金额",
+									"disabled": true
+								},
+								{
+									"key": "point",
+									"value": null,
+									"description": "积分抵扣",
+									"disabled": true
+								},
+								{
+									"key": "redDeduction",
+									"value": null,
+									"description": "红包抵扣",
+									"disabled": true
+								},
+								{
+									"key": "hfSplitAmount",
+									"value": null,
+									"description": "分账金额",
+									"disabled": true
+								},
+								{
+									"key": "hfSplitSn",
+									"value": null,
+									"description": "分账单号",
+									"disabled": true
+								},
+								{
+									"key": "huifuBpSn",
+									"value": null,
+									"description": "余额支付编号",
+									"disabled": true
+								},
+								{
+									"key": "huifuBpAmount",
+									"value": null,
+									"description": "余额支付金额",
+									"disabled": true
+								},
+								{
+									"key": "huifuBpStatus",
+									"value": null,
+									"description": "余额支付状态",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "订单列表查询参数获取",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{admin-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "autoPay",
+									"value": "normal",
+									"type": "default"
+								},
+								{
+									"key": "autoPay",
+									"value": "autoPay",
+									"type": "default",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/system/payOrder/fetchSearchParams",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"system",
+								"payOrder",
+								"fetchSearchParams"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "结算列表查询参数",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{admin-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/system/apply/fetchSearchParams",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"system",
+								"apply",
+								"fetchSearchParams"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "分账检查1111",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{admin-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"ids\":\"12\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/system/apply/exchange",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"system",
+								"apply",
+								"exchange"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "登录",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// 将接口返回数据，封装成自己需要的结构\r",
+							"var data = {\r",
+							"    response: pm.response.json()\r",
+							"}\r",
+							"console.log(data)\r",
+							"if(data.response.code == 200){\r",
+							"    postman.setEnvironmentVariable(\"admin-token\",data.response.token);\r",
+							"}\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\":\"{{username}}\",\"password\":\"{{password}}\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/login",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "下载文件",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{admin-token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "emplName",
+							"value": "赵",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "emplTel",
+							"value": "3173",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "corpName",
+							"value": "企业",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "corpId",
+							"value": "1",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "memberId",
+							"value": "203",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "ctimeStart",
+							"value": "2021-12-18 22:00:00",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "ctimeEnd",
+							"value": "2021-12-30 23:00:00",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "worker",
+							"value": "0",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/common/download?fileName=1db288e6-b1bb-4cf1-bf84-da3784b064db_企业员工数据.xlsx&delete=true",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"common",
+						"download"
+					],
+					"query": [
+						{
+							"key": "fileName",
+							"value": "1db288e6-b1bb-4cf1-bf84-da3784b064db_企业员工数据.xlsx"
+						},
+						{
+							"key": "delete",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "测试",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJsb2dpbl91c2VyX2tleSI6Ijc2YzY3NDQyLTI2YjctNGY2Yi1hYjIxLWJkYjA0MDY1N2I3MiJ9.xMIgnjlHrTXt297rMRTvG1lxB5DWG28G9gFuzntN5Qk5Nh2Wjw6QLkXHcr2UDJfCRsQEVV0R_d9xLZa4fLeeTg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://t-admin.jiaozidt.com/admin/system/activity-task/list",
+					"protocol": "https",
+					"host": [
+						"t-admin",
+						"jiaozidt",
+						"com"
+					],
+					"path": [
+						"admin",
+						"system",
+						"activity-task",
+						"list"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
